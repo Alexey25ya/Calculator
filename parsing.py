@@ -81,6 +81,11 @@ def calculate(expr : str) :
         tmp_num = mixed_operation(number[index_begin + 1:index_end])
         # Заменяем скобки числом в исходном выражении
         number = number[:index_begin] + [tmp_num] + number[index_end + 1:]
+        # костыль для минуса во главе списка
+        if number[0] == '-' and number[1] != '(':
+            number[1] = -number[1]
+            number.pop(0)
+
    
     return mixed_operation(number)
 
