@@ -1,5 +1,5 @@
 import check as ch
-from colorama import Fore,Back
+from colorama import Fore
 
 def rational_number(number:str) -> float:
     '''
@@ -20,7 +20,7 @@ def operation(oper:str) -> str:
     '''
     Ввод операции
     '''
-    input_sign = Fore.YELLOW + f'Введите знак операции: (+, -, *, /):{oper}' +Fore.WHITE
+    input_sign = Fore.YELLOW + f'Введите знак операции (+, -, *, /,**):{oper}' +Fore.WHITE
     return ch.check_symbol(input_sign)
 
 def choice_calc(number:str) -> int:
@@ -34,4 +34,4 @@ def output_result(data, res):
     '''
     Вывод результата
     '''
-    print(Fore.YELLOW + f"Для этого примера: {data} ответ будет: {res}" +Fore.WHITE)
+    print(Fore.YELLOW + f"{data} = {res}" +Fore.WHITE)
