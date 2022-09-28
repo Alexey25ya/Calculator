@@ -6,4 +6,4 @@ def logger(data, result):
     '''
     time = dt.now().strftime('%d.%m.%Y - %H:%M')
     with open('log.txt', 'a', encoding = 'UTF-8') as file:
-        file.write(f'{time}: \t{data} = {result}\n')
+        file.write(f'{time}: \t{data} = {result}\n') 
