@@ -1,6 +1,32 @@
+# Создать калькулятор для работы с рациональными и комплексными числами, организовать меню, добавив в нее систему логирования.
+## Модули:
+- check.py - 
+- controller.py - 
+- log.py - 
+- operations.py - Виталий, Лена
+- parsing.py - 
+- scheme.drawio.png - Лена
+- ui.py - Анастасия
+- readme.md - Лена
+
+## Модуль [***check.py***](https://github.com/dtnfktu/Calculator/blob/main/check.py)
+Реализованы проверки чисел, принятых с UI.
+
+## Модуль [***controller.py***](https://github.com/dtnfktu/Calculator/blob/main/controller.py)
+Модуль берет данные с UI, производит расчет, передает рузультат обратно и записывает его в журнал.
+
+## Модуль [***log.py***](https://github.com/dtnfktu/Calculator/blob/main/log.py)
+Записывает дату, время и результат проведения операций в файл.
+
+## Модуль [***operations.py***](https://github.com/dtnfktu/Calculator/blob/main/operations.py)
+Модуль возможных операций нашего калькулятора.
+
+## Модуль [***parsing.py***](https://github.com/dtnfktu/Calculator/blob/main/parsing.py)  
+=======
 # Calculator
 
 Модуль [***parsing.py***](https://github.com/dtnfktu/Calculator/blob/main/parsing.py)  
+
 В данном модуле реализованы несколько функций:  
 *checkstring(st : str)* принимает строку - арифметическое выражение, заданное пользователем. Например *2+3*.  
 - Заменяет запятые на точки: checkstring('2,5') = '2.5'
