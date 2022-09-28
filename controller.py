@@ -32,6 +32,8 @@ def button_click():
             result = op.mult()
         if sign == '/':
             result = op.div()
+        if sign=='**':
+            result=op.exp()
         if result == False:
             result = 'Деление на 0 невозможно!'
             print(result)

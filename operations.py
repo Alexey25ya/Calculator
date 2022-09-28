@@ -24,3 +24,6 @@ def mult():
 
 def div():
     return x / y if y != 0 else False
+
+def exp():
+    return x**y

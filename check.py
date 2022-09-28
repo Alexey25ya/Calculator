@@ -1,14 +1,5 @@
 from colorama import Fore
 
-def check_int_number(number: str) -> int:
-    '''
-    Поверка целого числа
-    '''
-    while True:
-        try:
-            return int(input(number))
-        except ValueError:
-            print(Fore.RED+f'Неверно! Должно быть целое число!')
 
 def check_float_number(number: str) -> float:
     '''
@@ -28,12 +19,12 @@ def check_symbol(symbol: str) -> str:
     while True:
         try:
             sym = input(symbol)
-            if sym == '+' or sym =='-' or sym =='*' or sym =='/':
+            if sym == '+' or sym =='-' or sym =='*' or sym =='/' or sym=='**':
                 return sym
             else:
-                print(Fore.RED+f'Неверно! Должен быть знак действия ("+", "-", "*", "/")!')
+                print(Fore.RED+f'Неверно! Должен быть знак действия ("+", "-", "*", "/","**")!')
         except ValueError:
-            print(Fore.RED+f'Неверно! Должен быть знак действия ("+", "-", "*", "/")!')
+            print(Fore.RED+f'Неверно! Должен быть знак действия ("+", "-", "*", "/","**")!')
 
 
 def check_calc(digit: str) -> int:
