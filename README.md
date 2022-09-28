@@ -22,6 +22,11 @@
 Модуль возможных операций нашего калькулятора.
 
 ## Модуль [***parsing.py***](https://github.com/dtnfktu/Calculator/blob/main/parsing.py)  
+=======
+# Calculator
+
+Модуль [***parsing.py***](https://github.com/dtnfktu/Calculator/blob/main/parsing.py)  
+
 В данном модуле реализованы несколько функций:  
 *checkstring(st : str)* принимает строку - арифметическое выражение, заданное пользователем. Например *2+3*.  
 - Заменяет запятые на точки: checkstring('2,5') = '2.5'
