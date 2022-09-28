@@ -34,4 +34,10 @@ def output_result(data, res):
     '''
     Вывод результата
     '''
-    print(Fore.YELLOW + f"{data} = {res}" +Fore.WHITE)
+    print(Fore.YELLOW + f"Для этого примера: {data} ответ будет: {res}" +Fore.WHITE)
+
+def error_result():
+    '''
+    Вывод ошибки при попытки деления на 0
+    '''
+    print(Fore.RED + "Ошибка! Деление на 0 невозможно!")

@@ -6,20 +6,18 @@ import log
 
 def button_click():
     '''
-    Ввода данных, расчет и вывод результат   
+    Ввода данных, расчет и вывод результат
     '''
-    
-    while True:    
+
+    while True:
         choice = ui.choice_calc('')
-        
+        sign = ui.operation(' ')
         if choice == 1:
             a= ui.rational_number(1)
-            sign = ui.operation(' ')
             b = ui.rational_number(2)
             op.init_ratio(a, b)
         elif choice == 2:
             a, ai = ui.complex_number(1)
-            sign = ui.operation(' ')
             b, bi = ui.complex_number(2)
             op.init_compl(a, ai, b, bi)
         elif choice==3:
@@ -35,10 +33,9 @@ def button_click():
         if sign=='**':
             result=op.exp()
         if result == False:
-            result = 'Деление на 0 невозможно!'
-            print(result)
+            result = ui.error_result()
+
 
         data = f'{op.x} {sign} {op.y}'
         ui.output_result(data, result)
         log.logger(data, result)
-        
