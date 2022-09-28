@@ -1,3 +1,18 @@
+def checkstring(st : str) :
+    '''Корректировка введенного выражения и проверка на корректность'''
+    ans = st.replace(' ','')            # удаляем пробелы, если таковые имеются
+    ans = ans.replace(',','.')          # меняем запятые на точки, если таковые есть
+    ans = ans.replace('\\','/')         # левый слеш на правый, если такой вдруг есть
+    for sym in ans :
+        if not sym in ('+','-','*','/','.','(',')','0','1','2','3','4','5','6','7','8','9') :
+            print('Введено некорректное выражение - в выражении присутствует недопустимый символ')
+            return -1
+
+    if len(list(filter(lambda x: x == '(',ans))) != len(list(filter(lambda x: x == ')',ans))) :
+        print('Введено некорректное выражение - количество открывающих и закрывающих скобок не совпадает')
+        return -1
+    return ans
+
 def parse_num(oper : str) :
     '''Переводит заданное выражение в из строки список'''
     ans = []
@@ -53,10 +68,10 @@ def mixed_operation(oper : list) :
 
     return res[0]
 
-# Еще не готово...
-def calculate(number : list) :
+def calculate(expr : str) :
     '''Вычисляем значение выражения'''
-    
+
+    number = parse_num(checkstring(expr))
     # Заменяем выражения в скобках на их значения
     while '(' in number :
         # Берём начало и конец выражения в скобках
@@ -68,3 +83,4 @@ def calculate(number : list) :
         number = number[:index_begin] + [tmp_num] + number[index_end + 1:]
    
     return mixed_operation(number)
+
