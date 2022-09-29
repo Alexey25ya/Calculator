@@ -1,61 +1,45 @@
 import parsing
 import parsecomplex
+import os
 
-# expr = '2'                                # Задаём выражение, можно через input()
-# print(expr,'=',parsing.calculate(expr))      # Обрабатываем список и выводим результат
+def menu() :
+    '''Меню программы, возвращает выбранный пкунт'''
+    os.system('cls')
+    print('1 Калькулятор рациональных чисел')
+    print('2 Калькулятор комплексных чисел')
+    print('3 Завершить работу')
+    return int(input())
 
-# expr = '2,5'                                # Задаём выражение, можно через input()
-# print(expr,'=',parsing.calculate(expr))      # Обрабатываем список и выводим результат
+def ratiocalc() :
+    '''Вызывает калькулятор рациональных чисел'''
+    os.system('cls')
+    while True :
+        expr = input('Введите выражение (для завершения просто Enter) : ')
+        if expr == '' :
+            break
+        if parsing.checkstring(expr) != -1 :
+            print(parsing.calculate(expr))
+        input('Для продолжения нажмите Enter')
 
-# expr = '2+3'                                # Задаём выражение, можно через input()
-# print(expr,'=',parsing.calculate(expr))      # Обрабатываем список и выводим результат
+def complexcalc() :
+    '''Вызывает калькулятор рациональных чисел'''
+    os.system('cls')
+    while True :
+        print('Комплексное число заключаем в [], у мнимой части на конце - i')
+        expr = input('Введите выражение (для завершения просто Enter) : ')
+        if expr == '' :
+            break
+        if parsecomplex.checkstring(expr) != -1 :
+            print(parsecomplex.calculate(expr))
+        input('Для продолжения нажмите Enter')
 
-# expr = '2.5-3'                              # Задаём выражение, можно через input()
-# print(expr,'=',parsing.calculate(expr))      # Обрабатываем список и выводим результат
-
-# expr = '7/2'                                # Задаём выражение, можно через input()
-# print(expr,'=',parsing.calculate(expr))      # Обрабатываем список и выводим результат
-
-# expr = '2.5*8'                              # Задаём выражение, можно через input()
-# print(expr,'=',parsing.calculate(expr))      # Обрабатываем список и выводим результат
-
-# expr = '(2+3)*4'                            # Задаём выражение, можно через input()
-# print(expr,'=',parsing.calculate(expr))      # Обрабатываем список и выводим результат
-
-# expr = '(1.5-3)*4+3.6*(8-9.2)'              # Задаём выражение, можно через input()
-# print(expr,'=',parsing.calculate(expr))      # Обрабатываем список и выводим результат
-
-# expr = '((2+3.2)*5-16)/2'                   # Задаём выражение, можно через input()
-# print(expr,'=',parsing.calculate(expr))      # Обрабатываем список и выводим результат
-
-# expr = '((2+3.2)*5-16)/2'                   # Задаём выражение, можно через input()
-# print(parsing.checkstring(expr))            # Корректируем, ищем ошибки
-
-# expr = '(2+3.2)*5-16)/2'                   # Задаём выражение, можно через input()
-# print(parsing.checkstring(expr))            # Корректируем, ищем ошибки
-
-# expr = '((2+3,2)*5-16)/2'                   # Задаём выражение, можно через input()
-# print(parsing.checkstring(expr))            # Корректируем, ищем ошибки
-
-# expr = '((2 + 3,2)*5-16) / 2'               # Задаём выражение, можно через input()
-# print(parsing.checkstring(expr))            # Корректируем, ищем ошибки
-
-# expr = '((2 + 3,2)*5-16g) / 2'               # Задаём выражение, можно через input()
-# print(parsing.checkstring(expr))            # Корректируем, ищем ошибки
-
-# expr = '((2 + 3,2)*5-16) / 2' 
-# expr = '((2 + 3,2)*5-16g) / 2'
-# if parsing.checkstring(expr) != -1 :
-#     print(expr,'=',parsing.calculate(parsing.checkstring(expr)))      # Обрабатываем список и выводим результат
-
-# expr = '[5 + i] + [-1 - 1.2i]'
-# print(parsecomplex.calculate(expr))
-
-# expr = '[5 + i] - [-1 - 1.2i]'
-# print(parsecomplex.calculate(expr))
-
-# expr = '[5 + i] * [-1 - 1.2i]'
-# print(parsecomplex.calculate(expr))
-
-# expr = '[5 + i] / [-1 - 1.2i]'
-# print(parsecomplex.calculate(expr))
+os.system('chcp 65001')
+while True :
+    key = menu()
+    if key == 3 :
+        break
+    if key == 1 :
+        ratiocalc()
+    if key == 2 :
+        complexcalc()
+print('Работа завершена')
